@@ -1,4 +1,9 @@
 package com.example.parcial.Repository;
 
-public interface EntrenadorRepository {
+import com.example.parcial.Model.Entrenador;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public interface EntrenadorRepository extends JpaRepository<Entrenador, Integer> {
 }

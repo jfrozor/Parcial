@@ -20,18 +20,9 @@ public class Equipo {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id_equipo;
 
-    @Column
-    @NonNull
     private String nombre;
-
-    @Column
-    @NonNull
     private String ciudad;
-
-    @Column
-    @NonNull
     private LocalDate fundacion;
-
 
     @OneToMany(mappedBy = "equipo", cascade = CascadeType.ALL)
     private List<Jugador> jugadores;
@@ -39,9 +30,9 @@ public class Equipo {
     @OneToMany(mappedBy = "equipo", cascade = CascadeType.ALL)
     private List<Entrenador> entrenadores;
 
-    @OneToMany(mappedBy = "equipoLocal", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "equipoLocal")
     private List<Partido> partidosLocal;
 
-    @OneToMany(mappedBy = "equipoVisita", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "equipoVisita")
     private List<Partido> partidosVisita;
 }

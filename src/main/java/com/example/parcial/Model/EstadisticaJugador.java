@@ -22,34 +22,11 @@ public class EstadisticaJugador {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id_estadistica;
 
-    @Column
-    @NonNull
-    private int id_jugador;
-
-    @Column
-    @NonNull
-    private int id_partido;
-
-    @Column
-    @NonNull
     private int minutos_jugados;
-
-    @Column
-    @NonNull
     private int goles;
-
-    @Column
-    @NonNull
     private int asistencias;
-
-    @Column
-    @NonNull
     private int tarjetas_amarillas;
-
-    @Column
-    @NonNull
     private int tarjetas_rojas;
-
 
     @ManyToOne
     @JoinColumn(name = "id_jugador")
@@ -58,5 +35,4 @@ public class EstadisticaJugador {
     @ManyToOne
     @JoinColumn(name = "id_partido")
     private Partido partido;
-
 }

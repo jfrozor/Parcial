@@ -18,20 +18,10 @@ public class Entrenador {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id_entrenador;
 
-    @Column
-    @NonNull
     private String nombre;
-
-    @Column
-    @NonNull
     private String especialidad;
-
-    @Column
-    @NonNull
-    private int id_equipo;
 
     @ManyToOne
     @JoinColumn(name = "id_equipo")
     private Equipo equipo;
-
 }

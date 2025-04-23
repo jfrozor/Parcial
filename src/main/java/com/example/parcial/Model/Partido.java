@@ -7,7 +7,6 @@ import jakarta.persistence.*;
 import lombok.*;
 
 import java.time.LocalDate;
-import java.util.Date;
 import java.util.List;
 @Entity
 @Setter
@@ -16,35 +15,14 @@ import java.util.List;
 @AllArgsConstructor
 @Table(name="partido")
 public class Partido {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id_partido;
 
-    @Column
-    @NonNull
-    private Date fecha;
-
-    @Column
-    @NonNull
+    private LocalDate fecha;
     private String estadio;
-
-    @Column
-    @NonNull
-    private int equipo_local;
-
-    @Column
-    @NonNull
-    private int equipo_visita;
-
-    @Column
-    @NonNull
     private int goles_local;
-
-    @Column
-    @NonNull
     private int goles_visita;
-
 
     @ManyToOne
     @JoinColumn(name = "equipo_local")
@@ -56,7 +34,4 @@ public class Partido {
 
     @OneToMany(mappedBy = "partido", cascade = CascadeType.ALL)
     private List<EstadisticaJugador> estadisticas;
-
-
-
 }

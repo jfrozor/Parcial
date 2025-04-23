@@ -1,0 +1,109 @@
+{
+    "info": {
+        "name": "Parcial Spring Boot API",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+        {
+            "name": "Listar todos los jugadores",
+            "request": {
+                "method": "GET",
+                "url": {
+                    "raw": "http://localhost:8080/api/jugadores"
+                }
+            }
+        },
+        {
+            "name": "Buscar jugadores por equipo",
+            "request": {
+                "method": "GET",
+                "url": {
+                    "raw": "http://localhost:8080/api/jugadores/por-equipo/1"
+                }
+            }
+        },
+        {
+            "name": "Buscar jugadores con m\u00e1s de X goles",
+            "request": {
+                "method": "GET",
+                "url": {
+                    "raw": "http://localhost:8080/api/jugadores/con-mas-goles?minGoles=2"
+                }
+            }
+        },
+        {
+            "name": "Crear jugador",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n    \"nombre\": \"Luis D\\u00edaz\",\n    \"posicion\": \"Delantero\",\n    \"dorsal\": 7,\n    \"fecha_nac\": \"1997-01-13\",\n    \"nacionalidad\": \"Colombia\",\n    \"id_equipo\": 1\n}"
+                },
+                "url": {
+                    "raw": "http://localhost:8080/api/jugadores"
+                }
+            }
+        },
+        {
+            "name": "Actualizar jugador",
+            "request": {
+                "method": "PUT",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n    \"nombre\": \"Luis D\\u00edaz Actualizado\",\n    \"posicion\": \"Delantero\",\n    \"dorsal\": 10,\n    \"fecha_nac\": \"1997-01-13\",\n    \"nacionalidad\": \"Colombia\",\n    \"id_equipo\": 2\n}"
+                },
+                "url": {
+                    "raw": "http://localhost:8080/api/jugadores/1"
+                }
+            }
+        },
+        {
+            "name": "Eliminar jugador",
+            "request": {
+                "method": "DELETE",
+                "url": {
+                    "raw": "http://localhost:8080/api/jugadores/1"
+                }
+            }
+        },
+        {
+            "name": "Listar todos los partidos",
+            "request": {
+                "method": "GET",
+                "url": {
+                    "raw": "http://localhost:8080/api/partidos"
+                }
+            }
+        },
+        {
+            "name": "Total de goles por equipo",
+            "request": {
+                "method": "GET",
+                "url": {
+                    "raw": "http://localhost:8080/api/partidos/total-goles/1"
+                }
+            }
+        },
+        {
+            "name": "Resultados con nombres de equipos",
+            "request": {
+                "method": "GET",
+                "url": {
+                    "raw": "http://localhost:8080/api/partidos/resultados"
+                }
+            }
+        }
+    ]
+}

@@ -6,9 +6,11 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import jakarta.persistence.*;
 import lombok.*;
+import java.time.LocalDate;
 
 
-import java.util.Date;
+
+
 import java.util.*;
 @Entity
 @Setter
@@ -21,24 +23,10 @@ public class Jugador {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id_jugador;
 
-    @Column
-    @NonNull
     private String nombre;
-
-    @Column
-    @NonNull
     private String posicion;
-
-    @Column
-    @NonNull
     private int dorsal;
-
-    @Column
-    @NonNull
-    private Date fecha_nac;
-
-    @Column
-    @NonNull
+    private LocalDate fecha_nac;
     private String nacionalidad;
 
     @ManyToOne
@@ -47,6 +35,5 @@ public class Jugador {
 
     @OneToMany(mappedBy = "jugador", cascade = CascadeType.ALL)
     private List<EstadisticaJugador> estadisticas;
-
 }
 
